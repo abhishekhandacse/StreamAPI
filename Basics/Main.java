@@ -60,7 +60,7 @@ class Main {
         System.out.println(person);
     }
 
-    private static void printPersonList(Map<String, List<Person>> groupedByGenderPerson) {
+    private static void printPersonGroupedMap(Map<String, List<Person>> groupedByGenderPerson) {
         for (Map.Entry<String, List<Person>> iter : groupedByGenderPerson.entrySet()) {
             System.out.println("Group is " + iter.getKey());
             List<Person> persons = iter.getValue();
@@ -94,7 +94,7 @@ class Main {
 
         Map<String, List<Person>> groupedByGenderPerson = Person.getPerson().stream()
                 .collect(Collectors.groupingBy(Person::getGender));
-        printPersonList(groupedByGenderPerson);
+        printPersonGroupedMap(groupedByGenderPerson);
     }
 
 }
